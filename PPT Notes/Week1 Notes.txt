@@ -1,0 +1,272 @@
+
+GitHub Repo Demo 
+
+Create a public repo - CU-DotNet-Jan26-B4
+
+Clone it on your laptop 
+
+git clone https://github.com/sharadksingh67/CU-DotNet-Jan26-B4
+
+Create folders for day wise submission like Day5
+
+Put your code or project in this folder
+
+git status
+
+git add .
+
+git commit -m "git demo"
+
+git push -u origin main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.NET has 2 broad category of types
+
+Value Types and Reference Types
+
+Struct		Classes / Interfaces etc 
+
+Stack		Heap
+
+A Solution can have multiple Project(s) 
+A Project can have File(s) (.cs and other files)
+A file can have 1 or more classes etc
+
+The Class having Main is called Startup class
+
+BCL is referenced by dependencies
+
+System is most common Namespace
+A namespace has unique named class
+Every Project will have its own namespace
+
+DO Not use Top Level Statements is selected 
+Build Solution - output window - Success
+Error - Red Squiggle
+
+runtime/src/libraries/System.Console/src/System/Console.cs at main · dotnet/runtime
+
+
+TopBrains
+GitHub
+Microsoft Learn
+
+CU-DotNet-Jan26-B4
+
+
+sharadksingh67
+
+
+Create a project in VS2026 with top level statement
+
+Coding Practices - 
+Naming Conventions - 
+	Method Name - Pascal case
+	Class Name - Pascal case
+	Namespace Name - Pascal case
+	Main - Pascal case
+	args & local variables - Camel case
+
+IDE - many windows
+
+	Solution Explorer
+	Properties
+	
+A window can be floating or Docked
+
+To dock drag and drop to a position holder
+We can make a window AutoHide
+
+can enable or disable line numbers in C# editor
+Tools - Options - C# - uncheck Line Numbers
+
+
+Data Types - 
+
+		Value Types 			Ref Types
+
+		struct				Class
+
+		int  alias to Int32 struct	string - String
+
+		In coding we use alias name
+
+		16 bit int Int16 alias short
+		64 bit int Int64 alias long
+
+
+cw is a snippet for Console.WriteLine()
+
+for is also another snippet
+
+Multiple files in a project
+
+Is it possible to run second file code
+
+How to create main in second file
+
+svm - Main snippet
+
+specify startup file - project properties 
+	
+Can rename file and class whenever required
+
+When we build what happens?
+	IL created
+Where? Open Project Folder 
+	bin - debug 
+	obj
+
+Project is targeting .NET 8
+
+Edit Project File - XML file having some configurations
+
+exe is created - MSIL file
+
+.exe .dll
+
+
+In windows what is .dll - Dynamic Link Library
+
+
+
+A project can be an executable project / library project
+
+Library project is to be used by other projects / reusable
+
+Library project will have public classes
+
+
+
+Logic Building
+
+
+MS Learn 
+
+Write your first C# code
+Store and retrieve data using literal and variable values in C#
+Convert data types using casting and conversion techniques in C#
+Perform basic operations on numbers in C#
+
+
+Convert.ToInt32(decimal) does not truncate; 
+it performs rounding to the nearest integer using MidpointRounding.ToEven (banker’s rounding).
+
+
+Create a document providing all steps for
+publishing using self contained and dependent mode
+ 
+
+MVC Model View Controller
+Structure of Project
+wwwroot - to have static files
+Views - folder to contain web output
+	in form of razor pages
+ MVC supports razor engine
+
+	CS + html  .cshtml
+
+	Will sub folder with the name of
+	controllers having multiple razor
+	pages for the controller output
+
+
+Controller folder will have multiple
+	controllers to handle request
+	and response as per url (Route)
+
+	A controller can handle multiple
+	requests 
+
+Controller should be derived from Controller
+	class
+
+Controller will have multiple
+	action methods and will return	
+	action result
+
+
+Models folder - entity classes
+	
+appsettings.json
+
+	we can add more settings like
+	ConnectionString to database
+	in this file
+
+
+MVC app is web app but starts as a 
+	console application
+
+Program.cs -  
+	creates a web host
+	
+	configures multiple services
+
+
+ 	can add more services like 	EntityFramework service
+
+
+	configures middleware
+
+
+
+
+
+------------------------
+
+MVC Web API
+
+	M C
+
+
+
+============================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
