@@ -1,0 +1,118 @@
+.NET Framework
+
+Create a Solution
+	solname.slnx
+Create a Solution Folder
+Create a new project in folder
+Every project has a file - projname.csproj
+
+.NET Framework solution file is solname.sln
+(supports only windows)
+Create .NET Framework Console App
+	version 4.7.2
+
+Set as startup project using right click on project
+
+In framework after compilation we get an exe or dll
+	depending on project type console and library
+
+This file is called assembly file
+Assembly file has 4 components
+	
+In .NET we get both
+
+Create a .NET Library Project
+
+.NET Microservice Project
+
+Web API handles data using http verbs
+
+Create Retrieve Update Delete 
+post  	get	put	delete
+
+endpoint(s)
+OpenAPI - documentation of Web API using Swagger
+
+Dependency Injection
+IEnumerable<Type>
+
+List<string>
+Generic collection (for specific type)
+
+Non Generic Collection (will have objects)
+ArrayList
+
+DateTime struct value type
+
+on string we can use Split method 
+to create an array of strings
+
+struct have constructor in .NET
+
+
+byte  -  1 Byte - 0-255         2^8 
+char - 2 Bytes
+DateTime
+string in detail 
+
+
+
+    A
+   AB
+  ABC
+ ABCD
+ABCDE
+
+DateTime 
+
+
+Steps of Learning - 
+
+	1 Copy Me
+	2 Do it again without ref
+	3 do experiment on code 
+	4 create another scenario 
+
+
+Methods
+
+Main() is entry point method.
+
+(accessspecifier) (static) returnType NameOfFunction(parameters) 
+{
+
+}
+
+method default accessspecifier is private
+class default accessspecifier is internal
+
+parameters and arguments
+
+arguments will be passed when calling methods
+
+value types are passed to a method as value type
+and ref types are passed as ref types
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
