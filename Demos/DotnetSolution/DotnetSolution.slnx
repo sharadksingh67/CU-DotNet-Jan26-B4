@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/Week2/">
+    <Project Path="CS_Learning/CS_Learning.csproj" Id="ba3cb914-656c-4607-a297-5904fd86bbbf" />
+    <Project Path="FrameworkConsoleApp/FrameworkConsoleApp.csproj" Id="e662001a-66e1-4c55-85d8-0c9d02c91434" />
+    <Project Path="MyClassLibrary/MyClassLibrary.csproj" />
+    <Project Path="UseLibraryDemo/UseLibraryDemo.csproj" />
+    <Project Path="WebAPIDemo/WebAPIDemo.csproj" Id="b22e0ddc-4a6f-4cb1-b6f2-2a9621b12dd5" />
+  </Folder>
+  <Folder Name="/Week3/">
+    <Project Path="OOPSLearning/OOPSLearning.csproj" Id="485951f5-a719-4dc0-9615-30f5b6133451" />
+  </Folder>
+</Solution>

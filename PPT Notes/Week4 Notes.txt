@@ -1,0 +1,251 @@
+Array.Sort(arr)
+Array.Reverse(arr)
+
+will Equals method work for UDT.
+
+override Equals and GetHashCode methods.
+
+can we apply Reverse() on string?
+
+IS A
+
+Abstract 
+virtual or abstract method
+Polymorphism
+
+interface
+IEnumerable
+Collection
+
+
+
+
+Inheritance
+base()
+
+Code to improve
+
+	1. Dynamically should call the method of the	
+	class for which object belongs.
+
+		create virtual method in base class
+		with implementation,
+		and override it in derived class
+
+		benefit - dynamic binding/ 
+			runtime Polymorphism
+
+	2.We should not be allowed to create 
+	object of base class.
+
+		create abstract class 
+
+		benefit - class not instantiable
+			must be inherited to be concrete class
+
+	What is abstract class?
+
+		can have abstract methods. (without implementation)
+
+	3. base class method may not have 
+	any implementations sometime.
+
+		Make the method as abstract with ; after signature.
+
+		benefit -  it is a contract to be implemented 
+			by every derived class.
+
+
+	This method will be used as a contract
+	so that every derived class must implement it
+	with different business logic.
+
+
+
+Contract - abstract class or interface
+
+	abstract class can have some non abstract methods
+	interface will have all non implemented methods 
+
+	how to create an interface?
+		start name with I
+			e.g. IProcessPayment
+
+		interface keyword
+	
+Interfaces -  for contracts 
+		
+A class can be derived from a class and multiple interfaces		
+example of any built-in interface in .NET
+
+IEnumerable - implemented by all collections
+
+This interface returns a collection
+using a keywork yield return
+
+
+
+
+  IEnumerator
+
+Collections implement this interface
+
+System.Collections;		// non-generic 
+System.Collections.Generic;	// generic
+
+
+Generic Collections	- same type elements
+Why generic collections when Array is there?
+- array is fixed size, collections are growable
+Generic Collection - Class<Type>
+
+e.g. List<int>
+
+Non Generic Collections	- objects 
+ArrayList - any type of values - objects
+
+all types are converted to object (Boxing)
+and reverse (UnBoxing)
+
+
+#if DEBUG
+
+List<Laptop> 
+List<string>
+List<int>
+
+Generic - same type 
+
+Can we create our own class which is Generic Class - YES
+
+Generic Class
+
+Why we need it? To make the class reusable for
+	different types
+
+How we do it? class MyList<T>
+
+Indexers in a class
+
+Just to apply index on object
+
+Operator Overloading
+
+List<T>
+Dictionary<K,V> is a generic collection
+
+Dictionary<string, string> countryCapitals= 
+	new Dictionary<string, string>();
+
+
+
+"India" , "New Delhi"
+
+Dictionary<int, string>
+
+1, "One"
+2, "Two"
+
+Create an entity class Student with
+properties - Id, Name, Marks
+
+Create a StudentManager class to manage student 
+database in terms of a dictionary<int, Student>
+
+The class should facilitate all CRUD operations
+like AddStudent, DeleteStudent, UpdateStudent, SearchStudent and DisplayAllStudents.  (BackEnd)
+
+Create a class to use the UseStudentManager class. (FrontEnd)
+
+
+
+
+
+
+Exception Handling
+
+What it is? to handle run time exceptions
+every exception is a derived class of Exception Class
+How ? using try catch(es) and finally
+
+if we use multiple catches, 
+the last catch should be most generic catch
+most generic catch can't be put before any specific catch
+
+In catch block we can handle any exception object
+to provide more information
+
+can we have try without catch?
+we can write catch or finally after try block.
+
+
+
+Calling Method   - Main
+Called Method - GetDiv
+
+If called method is generating an exception - 
+exception can be handled at called method
+
+if called method does not handle thrown exception,
+it is handled by (propagated to) calling method.
+
+Every exception may have an associated message.
+Message is a property of any Exception
+
+if we display exception obj, will display 
+class name, message, stack trace
+
+
+
+return (go back to calling method
+terminate rest of the called method
+)
+
+when we can use return?  only in void methods
+
+
+when we terminate the execution with 
+or without exception, finally will always be executed.
+
+ vs 
+
+go back to called methods with this value;
+return 0;
+
+Throw can be used to throw an object of any exception.
+use throw keyword to throw an object of exception.
+
+we can customize the message by passing a new string message in throw
+
+we can throw an exception from within a catch block.
+may be in a case when we want to throw a new exception
+from catch block
+
+User Defined or Custom Exceptions
+create a new class derived from Exception class
+create one parameter constructor with message
+e.g. SalaryOutOfRangeException
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

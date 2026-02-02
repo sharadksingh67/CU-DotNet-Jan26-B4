@@ -1,0 +1,127 @@
+Debugging - to check flow and
+values of variables at different
+lines, while executing code
+
+Break-Point     F9 or click on left to line number (toggle)
+Step Into - will run line by line a called method  F11
+Step Over - will not run the called method, will run next statement F10
+Immediate Window - Autos
+If Autos window not displayed be default,
+open it from Debug - Windows - Autos menu
+
+
+default parameters
+named arguments
+
+
+
+Parameter Types
+	value type or ref type
+	ref - when we want to pass value type as ref type 
+	out - get value from method
+	named - pass some of parameters with name
+	default - provide default values
+	in - passed to method as read only
+
+OOPS
+	Encapsulation
+	Abstraction
+	Polymorphism
+	Inheritance
+
+Class (internal (default), public)
+	Data Members	- private public protected internal
+		members are __private__ by default
+	Properties (Getters + Setters)
+	Methods (behavior)
+	Constructor
+	Event 
+	Indexers
+	operators (Overloaded)
+	etc
+
+Generally we should create an entity class in
+	a separate file.
+
+every class is derived from Object class
+	having some overridable methods.
+
+partial class are combined together after compilation
+
+Property is a combination of Getter and Setter in same
+	block
+
+How to create a property? 
+propfull is a snippet to create full property 
+	contains - data member + getter + setter
+
+There is also -
+Auto Implemented Property
+// auto implemented property
+// without any data member and 
+// business logic
+// CLR creates data member by default
+
+
+CLR provides default constructor 
+	to assign default values
+
+
+Create a class Employee - 
+	int Id			//private data member
+					with explicit methods
+	string Name		//auto property
+	string Department	//full property
+				// can assign only
+			// Accounts, Sales, IT
+	int Salary		// full prop range 50000
+					to 90000
+
+	with methods
+	Display() to display all properties
+
+
+We can create an object using a constructor
+or
+we can create an object by providing initial values.
+
+Object Initializer + Constructor
+
+
+
+
+int x = new int();
+int x=10;
+
+
+Can we pass the same class 
+object to the class method?
+
+
+Static Members - (Class Members)
+	
+
+	Static Properties
+		are shared by all _objects_
+
+	static methods
+		to be called by class name
+
+	static constructor
+		Only one in a class	
+		will run before creating first object
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
