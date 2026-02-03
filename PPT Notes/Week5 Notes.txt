@@ -1,0 +1,113 @@
+FileMode.CreateNew	Creates a new file. If it already exists, it throws an IOException.
+FileMode.Create		Overwrites if exists; creates if not.
+FileMode.OpenOrCreate	Opens the file if it exists; creates it if it doesn't.
+FileMode.Truncate	Opens an existing file and shrinks it to 0 bytes.
+
+
+ArrayList - non generic collection
+collections are allocated capacity to 0
+first item added it is allocated to 4
+if items add for more than capacity	
+the capacity is doubled.
+
+In ArrayList filter or check int items?
+
+On Collections Count is a property.
+Count() is a method provided by LINQ.
+
+Language Integrated Query.
+
+What is a Query? That can handle -
+Select Where OrderBy GroupBy 
+
+Query works on Database tables.
+Microsoft added LINQ to provide same functionality
+on collections in a very effective way using some 
+built in extension methods.
+
+Lambda expression 
+It is a way to write methods in compact way
+
+x => x % 2 == 1
+
+static bool isOdd(int x)
+{
+	if(x%2==1)
+	return true;
+
+	return false;
+}
+
+Array is a collection
+Is every collection an array? NO
+
+In LINQ we have collection of many 
+	extension methods.
+Count() is a extension method from LINQ.
+
+What is an extension method?
+
+Can we create our own extension method? YES
+why to create?
+in String class - is a sealed class 
+do we have any method to get number of words in a string? NO
+Can I add this method in String class? NO
+
+I want to add this WordCount method in String class.
+
+In this case we can add an extension method to the String class.
+Extension method is static method written in static class
+
+
+How to create - 
+
+Benefit of LINQ - many reusable methods are available
+	without writing detailed code,
+	and methods can be chained.
+
+
+
+HashSet - can not have duplicate values - no exception
+vs List<T>  can have duplicate value 
+
+Hash - No order maintained
+Every element is DictionaryEntry
+HashTable (Non generic) vs Dictionary (Generic)
+No duplicate keys allowed
+
+Stack - LIFO - Undo / Redo
+push
+pop
+
+Queue - FIFO - Printing request
+enque
+deque
+
+SortedDictionary
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
