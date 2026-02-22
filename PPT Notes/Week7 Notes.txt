@@ -1,0 +1,597 @@
+Social Network Revisit
+
+Recursive
+
+tree org
+
+async await intro
+
+Normalization
+
+
+Unit Testing
+
+We create Library 
+create a public class
+public method(s)
+
+We use the library class in another
+project
+
+we should test the method 
+is working fine.
+
+we can create some test cases 
+to check method code logic
+
+in .NET we use different 
+frameworks for Unit Testing
+
+NUnit, XUnit
+
+We can create a Testing Project 
+to test any other project
+
+Console Project - executable
+Library Project - for reference
+Test Project - add ref of Lib project
+In a code we can write some
+additional information about 
+a type (class) or a method
+using [Test] - Attributes
+
+the following method is a 
+test case
+
+we run the test cases in a window
+called Test Explorer
+
+Assert is class under 
+Unit Testing framework to test 
+something....
+
+Assert.Pass() - just pass it
+
+What is AAA in Unit Testing?
+
+A Arrange - arrange the TestBed
+A Act
+A Assert
+
+
+to avoid creating multiple test case methods for
+just changing the input, expected values 
+
+better we can use parameterized test case Methods
+
+for that purpose we use another attribute 
+[Testcase()]
+
+
+[Setup] attribute is used to define a method
+that will run before every test
+
+[TearDown] method will run after each test case
+
+we can debug a test case
+
+SQL Server
+
+
+SSMS connects to an instance of SQL Server
+
+may be back end instance is not available
+
+A network-related or instance-specific error occurred 
+
+How to run the SQL Server instance?
+
+in windows run services 
+run sqlexpress service
+
+server name - .\sqlexpress
+
+	. means localhost (local machine)
+
+SQL Server Development
+we will focus on Databases 
+
+we can have many databases
+
+In every database - there are many object collections
+
+	e.g.Tables 
+
+SQL Server - SQL queries 
+
+we can work on design mode
+or we can work on query mode
+
+to create a table we can write a command
+
+DDL -  Data Definition Language
+	e.g. create table
+		drop table
+
+
+DML - Data manipulation Language
+	insert / update / delete / select
+
+DCL
+
+to work on query we write on an editor
+
+create table with columns 
+
+data type int, nchar(10) fixed length 
+"abc       "
+
+, varchar(50)
+
+.sql file is a script file
+
+whenever we create a DB how many files
+are created on disk?
+
+In SQL Server by default creates 2 files.
+
+D:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\
+ 
+Primary File - main database 
+Log Files -  used for commit and rollback
+
+Every table will have some objects - 
+	columns, keys, constraints, triggers, indexes
+	
+Constraint - rules - not null, unique, default, check
+
+Northwind -  A trading company database with tables
+
+Products - products details 
+	ProductID - PK
+	SupplierId - FK
+	CategoryId - FK
+
+a table can have only 1 PK
+a table can have multiple FKs
+
+A category can have multiple products
+	
+Categories - to group products
+
+Employees - To run the company and manage orders, customers
+Suppliers - they will supply products
+Orders - to keep record of orders
+Customers - will place orders
+Shippers - for shipment
+	
+
+
+Products - ProductId (PK) - Identity Column - Auto Increment 
+
+
+
+
+
+
+
+
+Faculty - [FacultyId], FacultyName, Subject, 
+Student - [StudentId], StudentName, Class, FacultyId
+
+a faculty can teach multiple students 
+1 to many relation
+
+create table faculty (facultyid int primary key,
+		facultyname varchar(30) not null,
+		subject varchar(20));
+
+10, Fac1, SQL
+20, Fac2 , C#
+
+
+create table Student (studentid int primary key,
+	studentname varchar(50) not null,
+	class varchar(20),
+	FId int foreign key references faculty(facultyid)
+)
+1, S1, 10, 30
+
+data intigrity
+referential integrity  - 
+
+
+Composite Primary Key -
+
+Create a query to display orderId, customer name and count of products ordered.
+
+1NF - 
+2NF - 
+
+Why we do normalization?  to remove redundancy
+			and avoid various anomaly   (update, insert, delete)
+
+BCNF   - Nontrivial partial dependency
+
+
+
+
+SQL Server Engine  is parsing the query 
+validating all table name and column names,
+syntaxes etc like what indexes are used?
+whenever we run as a text (SQL query)
+
+Whenever we create a primary Key one index is created.
+
+that index is called clustered index.
+Internally it is implemented as B-Tree
+
+What is an index?
+
+Book has an index.
+TOC beginning Index End
+
+indexes are created on certain columns
+on performance based
+decided by admin or developer
+
+why not to create on every column - slow
+non PK - non clustered index
+clustered index - sorted 
+
+we should create indexes on only those columns
+used more in where clause
+
+Admin - 
+
+Profiler - tool 
+execution plan uses indexes to run the query
+
+select Id, name from employee where id =1000021
+
+TSQL - Transact SQL
+
+why we need TSQL - to write code with constructs
+
+to write certain objects - procedure, function, trigger
+
+certain object can be store on server as pre-compiled objects
+
+Views - is virtual table - read only 
+we can save any query as a view
+we can write a simple query - select * from View1 order by ;
+in the view we can't use orderby
+we will apply when running the view
+under Views Collection
+
+TSQL  - language - types, variable, declaration,
+	init, while, if, blocks
+{
+}
+
+
+
+
+@@ - system variable
+
+variable - 
+
+create procedure proc_Sum2Nums
+@num1 int,
+@num2 int
+as
+begin
+	declare @sum int;
+	set @sum = @num1 + @num2;
+	Select @Sum as Sum;	-- results
+end
+
+
+Procedure
+
+create a procedure with parameters - 
+pass a categoryid
+display total inventory value for the category
+
+
+
+function
+types of functions - scalar valued (single value)
+			table valued
+
+
+create function GetDouble
+(@num int)
+returns int
+as
+begin
+	return @num*2;
+end
+
+to execute a function we can use a select 
+
+proc vs function
+
+procedure can not be used in a select statement
+functions can be used.
+
+create a function to get 10% discount on
+product prices
+
+Table Valued Function - 
+
+create a function to return products
+between price ranges.
+
+alter function GetProductsBwRanges
+(@minRange int, @maxRange int)
+returns Table
+as
+
+return(
+	select ProductID, ProductName, UnitPrice
+	from Products
+	where UnitPrice
+	between @minRange and @maxRange
+	)
+
+select * from dbo.GetProductsBwRanges(10,20)
+
+
+
+SQL Server Built in Function
+
+Left, Right, Substring, Len
+
+
+ADO.NET  
+
+If we want to handle data at base level 
+we can use ADO.NET
+
+ActiveX Data Objects
+Why we use it?
+
+As a .NET developer we could connect any SQL Server 
+through coding and manipulate the data (CRUD operations)
+
+
+We have some classes to handle data crud operations
+under namespace - Microsoft.Data.SQLClient
+
+how to add a namespace required for coding
+
+We try to get it using Manage NuGet Packages
+
+
+To connect to a SQL Server we need server information
+
+We will create a connection object and pass this information
+
+like - Server Name, Authentication, 
+	On that server which Db to be connected
+
+Authentication Mode - Windows 
+
+
+ConnectionString can be taken from a connection in
+Server Explorer
+
+Create a new connection
+Open connection properties
+
+Create SqlCommand object 
+use Connection property to connect with connection.
+
+Use SqlDataReader to get data from SQl Server
+
+Data Reader is read only sequential reader
+
+command.ExecuteReader()
+
+Query - Select
+NonQuery - Insert, Update, Delete
+
+
+Never create a command query using concat string
+always prefer parameterized query command to avoid SQL Injection.
+
+every command can have multiple parameters
+
+SQL Injection - threat
+
+
+
+
+async - await
+
+will prefer async calls for avoiding blocking calls
+and make our system more responsive.
+utilize the waiting for other tasks
+ 
+async await Task Task<T> 
+
+create async method - add Async as suffix
+avoid using thread
+use keyword async in method signature
+and await to mark delayed statements
+avoid using void return type - use Task as return type
+
+
+change Main signature if async method is called
+void -> async Task
+
+async method call - await MethodAsync()
+
+
+
+Exception Handling -
+
+ERROR_NUMBER();
+ERROR_LINE();
+ERROR_MESSAGE();
+ERROR_STATE();
+
+
+
+
+
+
+
+
+begin try
+	declare @sum int;
+	if(@num1 > 100)
+		throw 50001,'Number is very high',1;
+	if(@num1 > 100)
+		throw 50001,'Number is very high',2;
+	set @sum = @num1 + @num2;
+	Select @Sum as Sum;	-- results
+end try
+begin catch
+	
+    DECLARE @ErrNum INT = 		
+    DECLARE @ErrLine INT = 		
+    DECLARE @ErrMsg NVARCHAR(4000) = 	
+	declare @ErrState int = 	
+
+	select @ErrNum,@ErrLine, @ErrMsg, @ErrState
+end catch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EF Entity Framework is an ORM
+Object Relational Mapper 
+
+INSERT INTO Products (ProductName, UnitPrice) 
+VALUES ('New Widget', 15.50);
+
+-- Captures the Auto-ID generated for the 'New Widget'
+DECLARE @NewID INT = @@IDENTITY; 
+
+-- Captures how many rows were inserted (should be 1)
+IF @@ROWCOUNT > 0
+    PRINT 'Insert Successful';
+
+Function
+
+
+
+CREATE PROCEDURE dbo.usp_AddProduct
+    @ProductName NVARCHAR(100),
+    @UnitPrice MONEY
+AS
+BEGIN
+    INSERT INTO Products (ProductName, UnitPrice)
+    VALUES (@ProductName, @UnitPrice);
+
+    -- Return the last identity created in this scope
+    SELECT SCOPE_IDENTITY();
+END
+
+
+SqlParameter outParam = new SqlParameter("@NewID", SqlDbType.Int) 
+{ 
+    Direction = ParameterDirection.Output 
+};
+cmd.Parameters.Add(outParam);
+
+cmd.ExecuteNonQuery();
+
+int newId = (int)outParam.Value;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using Microsoft.Data.SqlClient; // Or System.Data.SqlClient
+using System.Data;
+
+public void GetCategoryInventory(int categoryId)
+{
+    string connectionString = "Your_Connection_String_Here";
+
+    using (SqlConnection conn = new SqlConnection(connectionString))
+    {
+        // 1. Create the Command
+        SqlCommand cmd = new SqlCommand("proc_GetCatInventory", conn);
+        cmd.CommandType = CommandType.StoredProcedure;
+
+        // 2. Add Input Parameter
+        cmd.Parameters.AddWithValue("@catid", categoryId);
+
+        // 3. Add Output Parameter
+        SqlParameter outputParam = new SqlParameter
+        {
+            ParameterName = "@totalInv",
+            SqlDbType = SqlDbType.Decimal,
+            Precision = 10,
+            Scale = 2,
+            Direction = ParameterDirection.Output
+        };
+        cmd.Parameters.Add(outputParam);
+
+        try
+        {
+            conn.Open();
+            
+            // 4. Execute the command 
+            // We use ExecuteNonQuery because the proc doesn't return a result set (SELECT), 
+            // it only assigns a value to a variable.
+            cmd.ExecuteNonQuery();
+
+            // 5. Retrieve the Output Value
+            decimal totalInventory = (decimal)outputParam.Value;
+
+            Console.WriteLine($"Total Inventory for Category {categoryId}: {totalInventory:C}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
+    }
+}
+
+
+
+

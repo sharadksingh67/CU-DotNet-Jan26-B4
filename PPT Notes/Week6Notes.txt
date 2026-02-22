@@ -1,0 +1,248 @@
+Tracing vs 	Debugging
+
+Passive		Active
+
+Default trace output goes to output window
+
+we can add target locations for trace 
+e.g. can add tracing info to a file (append mode)
+
+Trace.Listeners - target places (files) 
+
+what is params keyword?
+why to use it?
+
+can be used to convert multiple values into an array
+
+create a method to pass any number of 
+integers and return sum of all.
+
+calling method can create an array of int[size]
+
+params
+
+Kitchen Appliances
+
+match dashes
+
+required keyword
+
+
+
+delegate 
+What is a delegate? 
+It is a type that can refer to a method 
+of same signature.
+
+How to create?
+using delegate keyword with a signature and 
+a delegate type name.
+
+Why we use delegate? 
+delegates are used in LINQ, or in Event Handling.
+
+delegates can refer multiple methods at a time
+called Multicasting.
+
+How to create a method without a name?
+
+Procedure and Function
+
+in C# void method is procedure
+and method with return type is function.
+
+2 types of delegates - Action  and  Func
+
+
+LINQ - Language Integrated Query
+
+Why LINQ? provides a set of extension methods
+
+Query - SQL 
+Similar to SQL, Select Where OrderBy should be working 
+on C# Collections
+
+Source of data - Collection
+
+a lambda returning a Boolean value is called predicate
+
+LINQ does deferred execution
+
+SubQuery
+
+Join
+
+GroupJoin
+
+Threads
+
+What is a thread? Single execution thread 
+
+Console App runs on a single thread - Main Thread
+
+Why we need to create more threads?  Concurrency - 
+
+multiple jobs are being done - os is providing time to each one
+
+Will it take more time than 1 by 1 pages  
+
+more overhead - switching
+
+games - 
+
+How to create and use threads?  Thread class
+
+constructor will expect ThreadStart or ParameterizedThreadStart
+
+what are these? these are delegates.
+
+Start method is used to start the thread working.
+
+Multiple apps are manipulated/handled by OS.	
+
+Join method is used to wait for completion of task being done by a thread.
+
+before Main thread terminates.
+
+Main Thread is parent thread and t1 and t2 are child threads of main thread.
+ 
+Real Life scenario
+
+
+Bank Account - Withdraw facility (Method)
+prop - Balance 
+
+
+Suppose request come from various banks for a withdraw?
+
+
+Balance is 1000 
+
+Cheque1 - 750
+Cheque2 - 750
+
+without thread handled transaction ?
+
+1000-750 = 250
+250-750 = -500
+
+Racing Condition?  multiple clients are trying to access same resource at the same time
+
+To overcome this scenario?
+
+lock keyword create a token system
+
+With threads how to change behavior?
+
+
+
+
+Install SQL Server Express - free version
+
+SSMS - SQL Server Management Studio 
+
+Open SSMS 
+Server Name - .\sqlexpress
+
+Check  - Trust Server Certificate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+namespace Week6Learnings
+{
+    public class Person
+    {
+        public string Name { get; set; }
+        // In a graph, "Children" becomes "Friends" or "Neighbors"
+        public List<Person> Friends { get; set; } = new List<Person>();
+
+        public Person(string name) => Name = name;
+
+        public void AddFriend(Person friend)
+        {
+            if (!Friends.Contains(friend))
+            {
+                Friends.Add(friend);
+                // In a social network, friendship is usually two-way (Undirected)
+                friend.Friends.Add(this);
+            }
+        }
+    }
+
+    public class SocialNetworkGraph
+    {
+        private List<Person> _members = new List<Person>();
+
+        public void AddMember(Person person) => _members.Add(person);
+
+        public void ShowNetwork()
+        {
+            Console.WriteLine("Social Network Map:");
+            foreach (var person in _members)
+            {       
+                var friendNames = new List<string>();
+                foreach (var friend in person.Friends)
+                {
+                    friendNames.Add(friend.Name);
+                }
+
+                Console.WriteLine($"{person.Name} is friends with: {string.Join(", ", friendNames)}");
+            }
+        }
+    }
+    internal class Demo07GraphFriends
+    {
+        static void Main()
+        {
+            var graph = new SocialNetworkGraph();
+
+            // Create People
+            var aman = new Person("Aman");
+            var bhaskar = new Person("Bhaskar");
+            var chetan = new Person("Chetan");
+            var dinkar = new Person("Dinkar");
+
+            graph.AddMember(aman);
+            graph.AddMember(bhaskar);
+            graph.AddMember(chetan);
+            graph.AddMember(dinkar);
+
+            // Create Connections (Edges)
+            aman.AddFriend(bhaskar);     // Alice <-> Bob
+            bhaskar.AddFriend(chetan);   // Bob <-> Charlie
+            chetan.AddFriend(aman); // Charlie <-> Alice (This forms a CYCLE - impossible in a Tree!)
+            chetan.AddFriend(dinkar); // Charlie <-> David
+
+            graph.ShowNetwork();
+        }
+    }
+}
+
