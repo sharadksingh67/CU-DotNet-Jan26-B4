@@ -1,0 +1,76 @@
+Set Operations
+
+Intersect 
+Union
+Minus
+
+Serialization - DeSerialization
+Purpose
+ we want to store objects or a collection like
+	List<Laptop> into a file
+Json - we want to create a json file 
+XML - or to create XML file 
+XML format - 
+
+StreamWriter StreamReader
+
+1 XMLSerialization		Writing
+2 XMLDeSerialization		Reading
+
+class - XMLSerializer  
+Serialize or DeSerialize method
+
+first create an entity class
+preferred to be public 
+with public properties 
+
+Create a List<Laptop> with data
+
+
+
+
+
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.Design
+
+
+
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.EntityFrameworkCore.Design
+
+ADO.NET 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
