@@ -26,6 +26,87 @@ with public properties
 
 Create a List<Laptop> with data
 
+Entity Framework - EF Core
+
+ORM - Object Relational Mapper 
+      	List	tables   
+we will work on objects of entity classes,
+will put the data in collections of objects
+like List<Laptop> 
+
+For EF we have 2 approaches -
+	DB First - if Db is available (rarely)
+	Code First - preferred
+
+specify the table name as DbSet<Laptop> Laptops
+
+we will not create database manually
+it will be created by code only
+
+build your project
+
+Open Package Manager Console
+
+we will write certain commands to create
+	migrations 
+
+	Migrations are like sql scripts 
+
+The process will create a folder "Migrations"\
+PMC> add-migration init
+
+after creating migration file,
+we have to execute migrations
+
+PM> update-database
+
+
+
+CRUD operation using EF and LINQ
+
+
+
+
+EF Installation
+
+
+we will nuget packages for EF, SQL Server
+and some other tools
+
+Create a project - e.g. Console
+add these packages
+
+Manage Nuget Packages 
+	- Microsoft.EntityFrameworkCore
+		version 9.0.11
+
+	- Microsoft.EntityFrameworkCore.SqlServer
+
+	- Microsoft.EntityFrameworkCore.Tools
+
+	- Microsoft.EntityFrameworkCore.Design
+
+Models 
+	Entity Class  e.g. Laptop
+Data
+	Context Class
+	Any class derived from DbContext
+
+	What is DbContext?
+	A class that represent database 
+	and its tables
+
+	How to use it?
+	override a method - OnConfiguring
+
+	In context class also specify 
+	the table(s) to be created in DB
+
+OnModelCreating
+	delete existing statement
+
+	we have to add dataprovider information
+	
 
 
 
@@ -34,8 +115,6 @@ Microsoft.EntityFrameworkCore
 Microsoft.EntityFrameworkCore.SqlServer
 Microsoft.EntityFrameworkCore.Tools
 Microsoft.EntityFrameworkCore.Design
-
-
 
 dotnet add package Microsoft.EntityFrameworkCore
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
