@@ -1,0 +1,23 @@
+  .mydiv {
+            margin: 20px 200px 20px 250px;
+            padding: 100px;
+            border: 2px solid red;
+            border-radius: 25px;
+            background-color: lightcyan;
+        }
+
+        p {
+            color: blue;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-left: 50px;
+        }
+
+        td,
+        th {
+            border: 2px solid blue;
+            padding-left: 10px;
+            padding-right: 10px;
+        }

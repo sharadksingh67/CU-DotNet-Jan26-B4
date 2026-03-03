@@ -44,9 +44,6 @@ colspan
 
 
 
-
-
-
 Creating Forms
 
 to gather information / data for 
@@ -66,6 +63,76 @@ http://127.0.0.1:5501/Demo03Forms.html?name=Sharad&city=Delhi
 Query/URL Parameter
 
 id name 
+
+
+
+
+
+CSS - Cascading Style Sheet
+
+Why - Styling elements, colors, fonts, layouts
+	alignment, margins, padding, borders
+
+How to use css -3 ways
+	inline, internal, external
+style=""  
+
+div table{
+color:blue;
+
+}
+h1,p {
+color : red;
+}
+p{
+color: red
+}
+
+selector  - element, class, id
+h1
+combinators - combine same style on multiple 
+		elements
+
+Box Model = Margin + Border + Padding
+
+
+Bootstrap      Tailwind
+Easy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
