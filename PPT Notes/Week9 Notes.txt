@@ -1,0 +1,86 @@
+Web Designing
+HTML	- Content	
+CSS	- Design
+JS	- Behavior
+Bootstrap - set of css built in classes
+
+VS Code Extensions
+Prettier
+HTML Boilerplate
+Live Server
+vscode-icons
+
+
+HTML 5
+document - head body
+
+responsiveness -  rendering 
+	on different devices 
+	as per their size
+
+<tags>   <h1>Welcome</h1>  InnerHTML/content
+self closing tags   <br/>
+
+Headings H1 - H5 
+
+In HTML we have elements 
+1.	Block element	e.g. p h1 div
+2.	Inline element e.g. span 
+
+to create a link <a>
+some elements can have attributes
+<a href
+we can nest elements
+List - ul (bullets) ol (numbers/romans)
+	li 
+
+table tr td th 
+
+in a table we can have collapsed cols
+purpose is to create common heading
+for multiple cols
+colspan
+
+
+
+
+
+
+
+Creating Forms
+
+to gather information / data for 
+any purpose like Employee Registration
+
+Controls - TextBox, Radio
+	DropDown, checkboxes,
+	date, Buttons 
+input tag
+
+if we create controls without a form?
+Submit and Reset 
+
+
+http://127.0.0.1:5501/Demo03Forms.html?name=Sharad&city=Delhi
+
+Query/URL Parameter
+
+id name 
+
+
+
+
+
+
+
+body {
+    background-image: url('./images/background.jpg');
+    background-size: cover;          /* Scales image to fill the screen */
+    background-position: center;     /* Centers the image */
+    background-repeat: no-repeat;    /* Prevents tiling */
+    background-attachment: fixed;    /* Image stays put while you scroll */
+    min-height: 100vh;               /* Ensures body is at least as tall as the screen */
+    margin: 0;                       /* Removes default browser spacing */
+}
+
+

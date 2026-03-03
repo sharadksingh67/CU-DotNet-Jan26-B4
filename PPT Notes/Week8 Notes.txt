@@ -124,10 +124,23 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 ADO.NET 
 
 
+Entity Framework Core 
+Defining and using related tables
+
+When using related tables and DbSets
+we have to define navigation properties
+in entity classes
+
+A dept can have many employees
+an employee can belong to a department
 
 
 
 
+
+EF by default loads as "No Loading"
+
+We can define "Eager Loading"
 
 
 
