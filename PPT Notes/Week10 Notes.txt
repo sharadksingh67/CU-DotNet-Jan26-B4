@@ -68,5 +68,49 @@ try to change content of any paragraph
 onSubmit event - return false; will cancel submit
 
 
+Accept a name on web page - input function
+Create a flag using name characters
+e.g. if name="ABCDEF"
+
+A
+AB
+ABC
+ABCD
+ABCDE
+ABCDEF
+
+display the flag on a element.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
