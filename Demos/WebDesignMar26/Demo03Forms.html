@@ -5,18 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function showName() {
+            var ename = document.getElementById('ename');
+            alert(ename.value)
+        }
+
+        function showSkills() {
+            let skills = document.getElementsByName('skills');
+            let labels = document.getElementsByName('lblSkill');
+
+            for (let index = 0; index < skills.length; index++) {
+                const skill = skills[index];
+                if (skill.checked) {
+                    console.log(skill.value);
+                    console.log(labels[index].innerHTML);
+                }
+            }
+        }
+
+    </script>
+
 </head>
 
 <body>
     <h1>Employee Registration Form</h1>
-    <form>
-        <table>
+    <form onsubmit="showSkills();return false; ">
+        <table name="table1">
             <tr>
                 <td>
                     <label>Enter Your Name</label>
                 </td>
                 <td>
-                    <input type="text" pattern="^[A-Z]{1}[a-z]{1,}$" name="ename" id="ename" required>
+                    <input type="text" pattern="^[A-Z]{1}[a-z]{1,}$" name="ename" id="ename">
                 </td>
             </tr>
             <tr>
@@ -24,8 +45,8 @@
                     <label>Enter Your PAN</label>
                 </td>
                 <td>
-                    <input type="text" placeholder="ABCDE1234Z" pattern="^[A-Z]{5}[0-9]{4}[A-Z]{1}$" name="pan" id="pan"
-                        required />
+                    <input type="text" placeholder="ABCDE1234Z" pattern="^[A-Z]{5}[0-9]{4}[A-Z]{1}$" name="pan"
+                        id="pan" />
                 </td>
             </tr>
             <tr>
@@ -33,10 +54,25 @@
                     <label>Select Gender</label>
                 </td>
                 <td>
-                    <input type="radio" name="gender" id="male" value="M" required />
+                    <input type="radio" name="gender" id="male" value="M" />
                     <label for="male">Male</label>
-                    <input type="radio" name="gender" id="female" value="F" required />
+                    <input type="radio" name="gender" id="female" value="F" />
                     <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Select Skills</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="skills" id="cs" value="1" />
+                    <label name="lblSkill" for="cs">C#</label>
+                    <input type="checkbox" name="skills" id="sql" value="2" />
+                    <label name="lblSkill" for="sql">SQL</label>
+                    <input type="checkbox" name="skills" id="mvc" value="3" />
+                    <label name="lblSkill" for="mvc">MVC</label>
+                    <input type="checkbox" name="skills" id="asp" value="4" />
+                    <label name="lblSkill" for="asp">ASP.NET</label>
                 </td>
             </tr>
             <tr>
@@ -44,7 +80,7 @@
                     <label>Select City</label>
                 </td>
                 <td>
-                    <select id="city" name="city" required>
+                    <select id="city" name="city">
                         <option value="">Select</option>
                         <option value="1">Delhi</option>
                         <option value="2">Mumbai</option>
@@ -59,7 +95,7 @@
                     <label>Select DOB</label>
                 </td>
                 <td>
-                    <input type="date" name="dob" id="dob" min="2000-01-01" max="2010-12-31" required />
+                    <input type="date" name="dob" id="dob" min="2000-01-01" max="2010-12-31" />
                 </td>
             </tr>
             <tr>
@@ -67,7 +103,7 @@
                     <label>Enter Age</label>
                 </td>
                 <td>
-                    <input type="number" name="age" id="age" min="18" max="50" required />
+                    <input type="number" name="age" id="age" min="18" max="50" />
                 </td>
             </tr>
             <tr>
@@ -75,14 +111,15 @@
                     <label>Enter Your Email</label>
                 </td>
                 <td>
-                    <input type="email" name="email" id="email" placeholder="abcd@abcd.com" required />
+                    <input type="email" name="email" id="email" placeholder="abcd@abcd.com" />
                 </td>
             </tr>
+
             <tr>
                 <td>
                 </td>
                 <td>
-                    <input type="submit" />
+                    <input type="submit" id="btnSubmit" />
                     <input type="reset" />
                 </td>
             </tr>

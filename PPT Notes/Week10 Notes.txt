@@ -1,0 +1,72 @@
+Week10 
+JS - A language for web
+it can change the content,
+used for creating dynamic pages
+with behavior
+can work with events
+
+How to use it?
+<script> </script>
+we can write functions 
+or statements
+
+We can add script tag in head or body
+preferred to put in body end
+to make the page more faster to load
+
+we can include JS in html file
+or we can add separately (external js)
+
+we create functions using function keywork
+we call the function on any event
+
+e.g. click or load or submit etc
+
+comments in JS - // line
+	/*   */ for multiline
+
+create a button and attach an event handler
+to it. using onclick attribute
+
+log will be displayed on inspect window
+
+as a language JS support variables,
+constructs, etc 
+Data Types - not a explicitly typed 
+
+age=22
+we can directly create a variable 
+without a var 
+var x;  // var has some drawbacks
+var is by default global
+
+let v1; // it is scoped
+
+modern JS we prefer let 
+
+NaN  Not a Number
+
+parseInt can be used to convert string into int
+
+undefined - a var is not initialized
+
+DOM - Document Object Model
+
+html - head body
+		form
+			input
+
+to manipulate any element we have to refer it
+using id or name
+
+preferred is by id
+
+getElementById
+
+try to change content of any paragraph
+
+onSubmit event - return false; will cancel submit
+
+
+
+
