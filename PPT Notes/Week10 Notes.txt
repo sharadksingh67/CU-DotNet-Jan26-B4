@@ -81,7 +81,213 @@ ABCDEF
 
 display the flag on a element.
 
+ASP.NET Core
 
+What is it? 
+A open source cross platform framework to create various types of web applications
+
+1 ASP.NET MVC		- With Views
+2 ASP.NET Web API	- for data operations
+			   without views
+etc
+
+
+Features of ASP.NET Core
+	- Cross Platform Web Server (Kestrel)
+	- Request Pipeline - Middleware
+	- modular support for Services 
+	- Logging
+	- DI (Dependency Injection)
+	- Configuration Support (from diff files)
+		launchSettings or appSettings
+				  (ConnectionString)
+			
+MVC - Models Views Controllers
+
+MVC is an architectural pattern
+	to have separation of concerns 
+	
+every component has separate responsibility
+Controllers - will handle all requests
+Models - will be handling data
+Views - for presentations
+
+In ASP.NET all application starts as Console APP
+we have program.cs and Main
+This program defines the services used
+and the middleware 
+
+It will also create a Host (Web Server)
+that will run the application using
+different end points (URLs)
+
+By default we get a controller - HomeController
+we can add as many controllers as required
+
+A controller is class derived from Controller class                    
+naming convention - class NameController: Controller
+
+A controller class can have 1 or more Action Methods
+An action methods returns ActionResult 
+that can be a view 
+
+In web application we work with some verbs 
+	GET POST PUT DELETE
+
+by default an action method is for GET
+if no attribute is otherwise provided
+[HttpGet]
+
+An action method returns a view with the same
+name as that of method name
+
+Where are views available - 
+	In Views Folder - Controller name folder
+	
+View is a file with extension .cshtml
+  combination of CS and HTML
+	uses Razor Engine - Razor Pages 
+
+some views are shared views those can be used by
+	all controllers / requests
+
+another example of shared view is _Layout.cshtml
+this view is used as a master page 
+containing header and footer
+
+to configure master view we use _ViewStart.cshtml
+which defines the _Layout to be used
+
+apart from html tags it can have @{}
+
+In Models folder we can define Entity classes
+that we can use for data handling
+
+To run MVC application request depends on Route
+https://localhost:7277/
+
+every app will have a different port 
+Route is defined as a combination of this URL
+https://localhost:7277/ControllerName/ActionMethodName
+	
+https://localhost:7277/Home/Index
+
+we can define/configure a default route so that while 
+running app we don't have to provide 
+startup controller and action method
+
+In program.cs this is also configured
+
+First line is creating the HOST (Kestrel )
+the port assigned is configured in launchSettings.json
+file under properties folder
+
+we have http and https ports and URLS
+http request will be redirected to https request
+automatically
+
+the Build command is creating the server and
+associated services like logging
+
+program.cs is doing majorly 2 things
+
+defining the services
+
+defining the middleware 
+
+middleware is a software that will run as a part
+of request handling
+
+we can add as many middleware when required
+e.g. UseAuthentication()
+
+Order of middleware is important
+
+Authentication should be before Authorization
+
+UseStaticFiles()
+
+static files - html + css + js etc
+static files are inside wwwroot folder
+
+we can create any html file in this folder
+
+for any application we can work on
+	Development env
+or	Production  	
+
+we can define this in a file - launchSettings 
+
+URLs + Port + env etc
+
+	
+appointment
+when you try to meet him - you will be
+	assigned one gatepass
+
+
+Visual Studio is supporting HotReload 
+
+Add an ActionMethod - ContactUs
+add a view - right click on method - add View
+not an empty view 
+as of now no entity model used
+
+
+Add a Controller
+Can change the ActionMethod name from Index
+Index is not mandatory
+
+Create a view for method
+
+
+Passing Data from Action Method to View
+
+
+New In C#
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HTTP Strict Transport Security (HSTS)
+On Windows - Web Server - IIS Server
 
 
 
