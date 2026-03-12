@@ -225,7 +225,6 @@ appointment
 when you try to meet him - you will be
 	assigned one gatepass
 
-
 Visual Studio is supporting HotReload 
 
 Add an ActionMethod - ContactUs
@@ -240,11 +239,84 @@ Index is not mandatory
 
 Create a view for method
 
+Q Even if UseStaticFiles commented
+	how bootstrap is working?
 
-Passing Data from Action Method to View
+Ans disable cache from browser
+
+
+
+In URL what is the use of Id?
+
+Get  -  Select All (e.g. display all employees)
+GetById - display 1 emp with id provided
+
 
 
 New In C#
+
+MVC Project
+Models - Entity Class (Emp)
+
+
+- EF
+- EmpController (Action Methods)
+	- GetALL
+	- GetById
+	- Create Emp (Form)
+	- Delete Emp
+	- Edit Emp
+	
+- All Views for these operations
+
+Scaffolding will create context,
+	controller, views, appsettings 
+	connectionString
+change connectionString for server name
+	add Trust Server Certificate=True;
+	and DB name if required
+
+Passing Data from Action Method to View
+
+purpose 
+IN method I have some data - show it on view
+
+data can be single variable or a collection
+
+Who will carry my data from controller to view
+We have multiple approaches 
+	1- use ViewBag.name = "abcd"    
+	ViewBag holds data as typed
+
+	2- use ViewData["name"] = "abcd"
+	ViewData holds data as object
+	needs casting on view
+
+	3- TempData["salary"] = 20000 
+	TempData also holds data as object
+
+	TempData is available for multiple requests
+	store data in session 
+
+	4- Use Model as a parameter to View
+
+
+
+
+diff b/w ViewData and TempData?
+ViewData is available only for 1 request
+means from 1 method to view only
+stored in memory - short lived
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -286,8 +358,6 @@ New In C#
 
 
 
-HTTP Strict Transport Security (HSTS)
-On Windows - Web Server - IIS Server
 
 
 
