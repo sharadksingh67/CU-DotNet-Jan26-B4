@@ -96,7 +96,7 @@ Features of ASP.NET Core
 	- Cross Platform Web Server (Kestrel)
 	- Request Pipeline - Middleware
 	- modular support for Services 
-	- Logging
+	- Logging - using ILogger 
 	- DI (Dependency Injection)
 	- Configuration Support (from diff files)
 		launchSettings or appSettings
@@ -299,7 +299,7 @@ We have multiple approaches
 	store data in session 
 
 	4- Use Model as a parameter to View
-
+	
 
 
 
@@ -308,15 +308,64 @@ ViewData is available only for 1 request
 means from 1 method to view only
 stored in memory - short lived
 
+using Logger  (ILogger)
+
+ILogger<ControllerClass> is available as constructor Injection using DI concept
+
+private readonly ILogger<EmpsController> _logger;
+
+public EmpsController(WebAppMVC7Context context,
+                ILogger<EmpsController> logger)
+{
+    _context = context;
+    _logger = logger;
+}
+
+to use a logger _logger.
+
+how to view log information? on output window
+
+What is Conventional Routing - defined by convention
+
+URL/controller/Action 
+
+https://localhost:7011/		- Conventional+Default
+https://localhost:7011/Home/Index
+
+Attribute Routing
+we can define route using attribute 
+that will override conventional route
+
+https://localhost:7011/Home/Index
+
+[Route("start")]
+https://localhost:7011/start
+
+use action parameters 
+https://localhost:7011/Home/Index/1
 
 
+If method uses a parameter, 
+route will be with param {name}
+
+e.g. [Route("ByPos/{id}")]
+
+[Route("start/[action]/{id}")]
+https://localhost:7011/start/ShowNameByPosition/2
 
 
+how to pass user defined parameters
 
 
+https://localhost:7011/home/ShowPositionByName?name=Bharat
 
+public IActionResult ShowPositionByName(string name)
+{
+    _logger.LogInformation("Home -> ShowPositionByName called");
+    return View(names.IndexOf(name) + 1);
+}
 
-
+ 
 
 
 
