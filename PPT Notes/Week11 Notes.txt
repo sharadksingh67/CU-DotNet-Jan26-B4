@@ -1,0 +1,100 @@
+Model
+
+is entity class used to transfer data between MVC app and DB
+mostly this can also be used to transfer data between
+controller action method and view 
+
+vs
+
+But sometime display on view is different from entity class
+so we can create viewmodel to transfer data between
+action method and view
+
+ViewModel
+
+e.g. View will show List<Book> and List<Customer>
+
+Model classes are  - Book and Customer
+ViewModel class is - {List<Book> & List<Customer>}
+
+another example is to pass data between only 
+action method and view (no DB persistence required)
+
+another example - Reg Page
+		User Id
+		Password 
+		Confirm Password
+
+	ViewModel
+
+	Model 	UserId
+		Password
+
+Blur - Press tab on TextBox - leave TextBox 
+
+	(Touched)	(Dirty - entered some value)
+
+Form Building - we can use HTML helpers @HTML
+OR we use Tag Helpers - preferred - asp-*
+
+Suppose I want to create a new record
+Form fill -> post action -> Save changes -> Form confirmation
+
+Token based authentication - JWT 
+JSON Web Token
+
+JWT token format 
+
+Will we use JWT in project? YES
+
+API based applications
+
+In MVC app can we use Authentication? YES - (not JWT auth)
+					cookies based 
+Register - Login - 
+Authorize - what user can do? Add Emp, change salary?
+Role based - Admin, User, Customer
+
+YES, but without any much effort.
+Will use built in Identity Framework
+
+will create all tables and pages.
+
+Tables - Users - UserId, Password (encrypted), 
+	Roles
+	Logins
+	UsersRoles
+
+Razor Pages App vs 	MVC App
+
+No Controller/Page	Controller
+ViewModel		Model
+MV-VM			MVC
+simple form based	Complex Projects
+
+encryption, decryption 
+
+Razor Pages - Login, registration, ReSet PWD, etc
+
+Authentication
+
+[Authorize]
+
+ASP.NET Core - 
+	
+	MVC			Front End	(Login, Cookies)
+	WebAPI			BackEnd		(JWT)
+	
+	Razor Pages Application (No Controllers)
+	Blazor Applications (Component Bases Application using C#
+				Angular/ React using TypeScript )
+
+
+Areas
+
+[HttpPost, ActionName("Delete")]
+
+
+
+
+
