@@ -80,19 +80,279 @@ Authentication
 
 [Authorize]
 
+
+
+
+
+
 ASP.NET Core - 
 	
 	MVC			Front End	(Login, Cookies)
 	WebAPI			BackEnd		(JWT)
 	
 	Razor Pages Application (No Controllers)
+		MV VM - Page contains model
+
 	Blazor Applications (Component Bases Application using C#
 				Angular/ React using TypeScript )
 
 
+TrustServerCertificate=True;
+
 Areas
 
+used to create a big application which will have
+ many sub applications
+
+Main Project - CorporateProject
+	Sub Projects - 	Accounts
+			Sales
+			IT
+
+	Every sub project will have their own controllers
+				Models and Views
+
+	Identity area project is Razor Pages Application
+		which can have multiple pages
+
+	Identity framework will provide many built in features
+	for Security
+
+	Database for all required tables like Users, Roles etc
+
+	and razor pages for all security handling
+
+	all the pages are hidden - they are shared from 
+			global location 
+
+
+
+Create Identity Related Razor Pages in Areas folder
+purpose - we can customize them
+
+Right Click Project -> Add scaffolded Items -> Identity
+	Will display a Modal form
+
+	will select required pages
+	select context class from dropdown
+
+Razor Pages App
+	No Controller
+	Actions are represented as pages 
+	for every action we can have separate page
+
+	to be simple for development 
+	to create simple application 
+
+	Razor pages work on verbs like OnGet OnPost
+
+	
+ app.UseAuthentication();
+
+ app.UseAuthorization();
+
+
 [HttpPost, ActionName("Delete")]
+
+
+
+
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 8.0.10
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 8.0.10
+
+
+code for controller is provided here - please create code for services and repository layers 
+
+
+
+public interface ILifecycleService
+{
+    Guid GetId();
+}
+
+public class LifecycleService : ILifecycleService
+{
+    private readonly Guid _id;
+    public LifecycleService() => _id = Guid.NewGuid();
+    public Guid GetId() => _id;
+}
+
+
+// Each registration gets a different lifetime
+builder.Services.AddTransient<ITransientService, LifecycleService>();
+builder.Services.AddScoped<IScopedService, LifecycleService>();
+builder.Services.AddSingleton<ISingletonService, LifecycleService>();
+
+
+[Route("api/[controller]")]
+public class LifetimeController : ControllerBase
+{
+    private readonly ITransientService _transient1;
+    private readonly ITransientService _transient2;
+    private readonly IScopedService _scoped1;
+    private readonly IScopedService _scoped2;
+    private readonly ISingletonService _singleton;
+
+    public LifetimeController(
+        ITransientService t1, ITransientService t2,
+        IScopedService s1, IScopedService s2,
+        ISingletonService singleton)
+    {
+        _transient1 = t1; _transient2 = t2;
+        _scoped1 = s1; _scoped2 = s2;
+        _singleton = singleton;
+    }
+
+    [HttpGet]
+    public IActionResult Get()
+    {
+        return Ok(new {
+            Transient = new { ID1 = _transient1.GetId(), ID2 = _transient2.GetId() },
+            Scoped = new { ID1 = _scoped1.GetId(), ID2 = _scoped2.GetId() },
+            Singleton = _singleton.GetId()
+        });
+    }
+}
+
+
+
+Web API
+
+ASP.NET Web API - It is a framework to create REST APIs
+
+What is it? RESTFUL APIs
+Representational State Transfer
+for Resources - 
+Purpose - to provide data from server 
+based on some constraints/rules (6)
+defined by REST architecture
+
+CORS - Cross Origin Resource Sharing
+Resource is any object or data on server
+To allow sharing of resource from a server to another
+application, CORS should be enabled.
+Data about any entity
+ 
+REST supports client - server architecture and it is stateless
+stateless - server will not store any information about client
+	that means every request is separate request
+
+Client can be any application trying to use resources
+e.g. MVC, Angular, React etc 
+
+We will use Controller without views 
+	the API controller class will derive from ControllerBase
+
+this is base class of Controller class that does not support Views
+
+OPEN API is standard for documentation of APIs
+But it is implemented using a software called SwaggerUI
+
+will define endpoints available from API server
+End User will know what resource sharing is available.
+
+We can create API using Controllers
+or without controllers called minimal API
+
+Project Folder Structure - 
+Models folder is required 
+
+But in default application (simple application
+using an entity class WeatherForecast)
+
+
+In Web API controllers, action methods are not there
+
+method will be used using Http Verbs 
+method name is not important
+
+When we run application and send request using a 
+URL we can run on any client - swagger, browser,
+				postman etc
+
+format of data received is json
+
+In WebAPI Http Verb and status code are very important
+
+GET			Get all data
+GET by Id		Get Data By ID
+POST			Create data	
+PUT			Replace data
+DELETE			Delete data
+
+Status Code Category 
+
+100	Information
+200	Success   201 - Created 204-Update Success
+300
+400  	Client Errors 404 Not Found
+500	Server Errors
+
+API Controllers may use attributes like
+
+[ApiController]	- Data Validation - from model 
+	it will validate the request data sent by client data automatically
+
+[Route("api/[controller]")]
+
+(In MVC ModelState.IsValid was used)
+
+Create Models Folder - class
+Use EF to create Controller and methods
+
+MVC uses ViewModel for mapping incoming and outgoing model
+In WebAPI we use DTO (Data Transfer Object)
+
+DTO to be used for response or request transfer
+Model will be used for DB transfer
+
+EndPoints
+
+Controllers with views include [action] in the route template.
+API controllers don't include [action] in the route template.
+
+Status Code 
+
+OpenAPI vs Swagger 
+
+Web API with InMemory
+Microsoft.EntityFrameworkCore.InMemory
+
+Web API with EF
+
+Postman Testing
+
+Repository Pattern
+
+Standard WebAPI Project Structure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
