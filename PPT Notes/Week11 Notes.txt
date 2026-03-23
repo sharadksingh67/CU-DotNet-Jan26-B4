@@ -322,6 +322,11 @@ Web API with EF
 
 Postman Testing
 
+
+Implement DTO
+
+
+
 Repository Pattern
 
 Standard WebAPI Project Structure

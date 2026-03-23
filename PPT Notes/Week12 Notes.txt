@@ -1,0 +1,11 @@
+Multi Layer Application
+
+we will work on Microservices architecture
+Repository Pattern Implementation
+We have to use same pattern in API / Microservices creation
+
+Any Entity should be having all CRUD operations implemented
+
+Service and Repository should be injected where-ever required
+Means we should be using DI - Dependency Injection
+
