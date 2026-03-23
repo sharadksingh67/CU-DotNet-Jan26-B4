@@ -9,3 +9,12 @@ Any Entity should be having all CRUD operations implemented
 Service and Repository should be injected where-ever required
 Means we should be using DI - Dependency Injection
 
+Interfaces should be used.
+
+
+DI in MVC App
+
+In multiple controllers we want to use a Service
+
+Service can be a method returning something 
+
