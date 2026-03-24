@@ -22,3 +22,52 @@ SayHello - Hello World
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CapstoneSolution- 
+
+	WebAPIServices
+
+		AuthenticationAPI API Project
+		Web APIs projects (implemented as Microservices
+		AuthAPI  7001
+		ProdAPI  7002
+		CartAPI  7003
+		AccountService - API
+
+
+	MVC Application working as Client/FrontEnd
+
+	Testing Project XUnit
+
+	Gateway Project	7000		/auth
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
