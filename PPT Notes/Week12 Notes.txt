@@ -22,6 +22,26 @@ SayHello - Hello World
 
 
 
+Web API 
+
+Auth API Project
+Create TokenService - return Created Token 
+Register the service in Program.cs 
+Constructor Inject it in Controller
+
+Logging - File Based append mode - Serilog
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
