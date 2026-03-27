@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="APIServices/SmartBank.AccountService/SmartBank.AccountService.csproj" />
+  <Project Path="APIServices/SmartBank.AuthService/SmartBank.AuthService.csproj" />
+</Solution>
