@@ -34,7 +34,10 @@ Logging - File Based append mode - Serilog
 
 Solution File
 csproj file
+
 httpClient
+
+
 Fluent API
 Content Negotiation
 Serilog
