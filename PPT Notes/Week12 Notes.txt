@@ -38,12 +38,52 @@ csproj file
 httpClient
 
 
-Fluent API
 Content Negotiation
+To get data in required format like XML
+
+Fluent API
+to assign all rules / constraints at one place
+rather than putting annotations in individual model properties
+
+e.g.            modelBuilder.Entity<Car>()
+                    .Property(p => p.Price)
+                    .IsRequired(true);
+
+            modelBuilder.Entity<Car>()
+                    .Property(p => p.CarId)
+                    .ValueGeneratedNever();
+
+Steps -
+	Create a new Web API project with controllers
+	delete weather class and weather controller
+	create Models folder
+	create a new model in models folder - e.g. Car
+	Don't write annotations on properties
+	Build the project
+	Create controller using EF 
+	this will create DbContext file
+	in context file - override OnModelCreating method
+	write all Fluent API code to put constraints
+	add migrations
+	update-database
+
+	
+	
+
 Serilog
 
 
 
+
+
+
+Services Lifecycle
+Singleton
+Singleton services are created the first time they are requested
+Scoped
+Scoped services are created once per client request
+Transient
+Transient services are created every time they are requested
 
 
 
