@@ -53,6 +53,59 @@ e.g.            modelBuilder.Entity<Car>()
                     .Property(p => p.CarId)
                     .ValueGeneratedNever();
 
+Another example of Fluent API
+If Model is - 
+
+public class Laptop
+{
+    public int Id { get; set; }
+    public string Model { get; set; }
+    public string SerialNumber { get; set; } // For Unique Index demo
+    public decimal Price { get; set; }       // Decimals are better for currency
+    public DateTime CreatedDate { get; set; } // For Default Value demo
+    public bool IsAvailable { get; set; }
+}
+
+we can apply fluent api - 
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.Entity<Laptop>(entity =>
+    {
+        // 1. Primary Key
+        entity.HasKey(e => e.Id);
+
+        // 2. String Constraints (Required and Max Length)
+        entity.Property(e => e.Model)
+            .IsRequired()
+            .HasMaxLength(100);
+
+        // 3. Unique Index (Great for Serial Numbers)
+        entity.HasIndex(e => e.SerialNumber)
+            .IsUnique();
+
+        entity.Property(e => e.SerialNumber)
+            .IsRequired()
+            .HasMaxLength(50);
+
+        // 4. Precision & Scale (Crucial for decimal/currency)
+        entity.Property(e => e.Price)
+            .HasPrecision(18, 2);
+
+        // 5. Default Values
+        // Sets the date automatically when a row is inserted
+        entity.Property(e => e.CreatedDate)
+            .HasDefaultValueSql("GETDATE()");
+
+        entity.Property(e => e.IsAvailable)
+            .HasDefaultValue(true);
+
+        // 6. Table & Column Mapping (If you want different DB names)
+        entity.ToTable("Inventory_Laptops");
+        entity.Property(e => e.Model).HasColumnName("Laptop_Model_Name");
+    });
+}
+
+
 Steps -
 	Create a new Web API project with controllers
 	delete weather class and weather controller
@@ -67,14 +120,6 @@ Steps -
 	add migrations
 	update-database
 
-	
-	
-
-Serilog
-
-
-
-
 
 
 Services Lifecycle
@@ -84,26 +129,6 @@ Scoped
 Scoped services are created once per client request
 Transient
 Transient services are created every time they are requested
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -126,6 +151,111 @@ CapstoneSolution-
 	Gateway Project	7000		/auth
 
 
+Serilog	 - logging to a file (sink) in append mode
+	new files will be created automatically 
+	based on some configurations
+	e.g. every day a new log file
+
+MongoDB  - Heterogenous DB 
+	1 SQL based another No-SQL
+
+	What is MongoDB?
+	Install MongoDb    
+
+	MongoDB client is Compass 
+	SQL Server client is SSMS
+	
+	Atlas -  Online
+
+Razor Pages	- For feedback requirement
+		we will implement razor page
+		in MVC app.
+
+Feedback Razor Page Implementations	
+
+Create a pages folder in MVC application
+
+in models folder add feedback class
+
+change appsettings to create mongodb connection
+
+Create a folder - MongoDBSettings
+
+create a class 
+public class MongoDbSettings
+{
+    public string ConnectionString { get; set; }
+    public string DatabaseName { get; set; }
+    public string FeedbackCollection { get; set; }
+}
+
+In MVC project create a folder Services
+add a service class - FeedbackService
+
+in program.cs add mongo service
+
+builder.Services.AddRazorPages();
+
+
+
+
+
+
+Gateway     	- 
+	Why? Client APP will connect to Gateway
+	Gateway will redirect to required service
+	
+Gateway	7000
+
+Auth	7001
+Acc	7002
+Trans	7003
+Loans	7004
+Notif	7005
+
+We have multiple choices for Gateway Implementation
+
+	Consul - It is not from Microsoft 
+	
+	Yarp - It is from Microsoft
+
+https://localhost:7000/auth/register
+https://localhost:7001/api/auth/register
+
+Forward Proxy	-  	Client 
+Reverse Proxy	- 	Server 
+
+Open API - Swagger - SwashBuckle package
+
+
+CORS - Cross Origin Resource Sharing
+
+Why it is required?
+
+	The App running on different domain 
+	may not be able to access apis.
+
+Why it is working till now?
+	Even if we are running microservices
+	and front end MVC from different ports
+	it is not required yet bcos same server
+	to server communication - kestrel
+
+When it is required?
+
+If client application is not running on kestrel
+	Angular
+	Node
+	HTML
+
+
+We have to enable it through program.cs
+
+we will try to create a web client using html page
+
+this is giving error - from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.	
+
+to overcome this, we have to enable CORS
 
 
 
