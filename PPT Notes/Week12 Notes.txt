@@ -257,6 +257,89 @@ this is giving error - from origin 'http://127.0.0.1:5500' has been blocked by C
 
 to overcome this, we have to enable CORS
 
+Code First
+Models - Entity Class
+create controller - class, it creates dbContext
+appsettings - default connectionString
+
+program.cs - register DbContext service 
+add-migration
+update-database 
+
+
+
+
+DB First Approach - Reverse Engineering Approach
+In case existing DB has to be used.
+Will refer existing DB - TestDB - Student
+
+dotnet cli - command line interface
+what is use of cli
+
+>dotnet new console
+>dotnet build
+>dotnet run
+
+
+
+dotnet command driver 
+
+dotnet tool install --global dotnet-ef
+
+install using terminal- 
+
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 8.0.10
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 8.0.10
+
+<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.23" />
+
+
+In appsettings add ConnectionString - 
+
+"ConnectionStrings": {
+  "DefaultConnection": "Server=.\\sqlexpress;Database=TestDb;Trusted_Connection=True;TrustServerCertificate=True;"
+}
+
+Now we have to create context file in Data folder 
+and controller file 
+
+dotnet ef dbcontext scaffold "Server=.\sqlexpress;Database=TestDB;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --context-dir Data --context MyAppDbContext
+
+
+appsettings - 
+
+
+
+in program.cs
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<MyDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+
+Add controller in Controllers folder using scaffolding
+
+using existing dbContext file
+
+
+
+Serilog - to create appendable log file 
+		for every new day logs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
