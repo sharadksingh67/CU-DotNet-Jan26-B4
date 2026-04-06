@@ -1,2 +1,49 @@
 Azure 
+https://portal.azure.com
 
+DevOps
+Epic - Feature - UserStory - Task/Issues
+Backlogs
+
+Geography - Country e.g. India 
+	Regions - Why multiple regions
+		SLA 3-9 (99.9)  99.99
+	Resilence policy - Redundancy
+
+	
+Entra ID  Active Directory
+
+	to manage user and groups
+
+multi tenant application
+single tenant 
+  
+
+
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MSLEARN - Level, Badges, Trophies
