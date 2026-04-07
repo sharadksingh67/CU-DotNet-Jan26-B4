@@ -18,32 +18,63 @@ Entra ID  Active Directory
 multi tenant application
 single tenant 
   
-
-
-
-
-	
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 MSLEARN - Level, Badges, Trophies
+
+
+Boards 
+Epics, Features, User Story, Tasks 
+
+Project - Insurance Project
+
+How to add project members?
+Benefit?
+Collaboration, allocation
+
+Agile teams - 5 to 6 members
+Agile Role - Lead 
+
+Stakeholder - owner - 
+Anybody interested in project
+
+Azure Users and Permissions
+
+RBAC - Roll Based Access Control
+
+
+We create a resource group
+ - create some resource like "storage account"
+		Data Storage
+			"Containers"
+			"Files" or BLOBs 
+	or vm
+
+Create a new user 
+	let him login
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
