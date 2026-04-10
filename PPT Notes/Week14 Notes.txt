@@ -1,0 +1,118 @@
+Azure Key Vault
+
+to place our secret information
+and
+encrypted information
+
+e.g.
+rather than putting info in appsettings
+like connection string 
+better practice is to keep there
+
+In Azure Vault we can add
+	secrets - Key Value pair
+			directory path
+or 	keys 	(encryption key)
+		to store encrypted pwd
+		in database
+
+	private and public key
+
+we can send data to azure in plain text
+azure key will convert it to encrypted
+value and then store in database
+
+demo target - create vault
+	create secret and keys
+	access values thru C#
+
+IP Address - 4 octets
+	10.192.0.11
+
+Azure Virtual Network - 
+	can have a set of objects like
+	vms or printer etc
+	SubNet 	
+
+range of address - 
+
+
+Windows Web Server 	IIS
+
+after installing IIS
+	IIS manager 
+
+c:\inetpub\wwwroot
+
+first.html
+
+browser
+
+http://localhost/first.html
+localhost is name of ip address 
+
+	127.0.0.1
+	index.html
+
+deploy 
+Linux			
+
+
+rg-appgw-lab
+
+VNet - vnet-appgw 
+
+Subnets - 1   appgw-subnet
+	  2   backend-subnet
+
+VM1	Private 10.0.1.4
+VM2	Private 10.0.1.5	
+
+
+
+
+
+That error is straightforward:
+
+Microsoft.Cdn is not registered for the subscription
+means your Azure subscription hasn’t enabled the CDN resource provider yet.
+
+✅ Fix (Portal – easiest for demo)
+Go to Azure Portal
+Search → Subscriptions
+Select your subscription
+Go to Resource providers
+Search: Microsoft.Cdn
+Click Register
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
