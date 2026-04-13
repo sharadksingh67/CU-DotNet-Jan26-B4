@@ -84,16 +84,51 @@ Select your subscription
 Go to Resource providers
 Search: Microsoft.Cdn
 Click Register
+Azure Portal
+App Services
+can be used to deploy 
+various types of applications
+	e.g. Web API, MVC, Angular etc
+
+Let us create a new web api - azureAppAPI
+
+Add API project to source control
+	git will be initialized for this project
+
+local git and remote git
 
 
 
 
 
 
+Create a Web API using EF SQL Server (local)
+
+add migration, update database
+test web api on swagger
+data should be added locally
+
+we have to replace local SQL server 
+	with azure database and SQL Server
+
+Create azure SQL database
+as a part of DB creation, server will
+	also be created
+
+  A new azure option is serverless SQL Server
+	It is not like there is no server
+	but it is sharing low cost
+	azure maintained SQL Server
+	we don't have to manage it
+
+sksadmin   Sharad@123
 
 
+Server=tcp:skssqlserver123.database.windows.net,1433;Initial Catalog=sksazuresqldb;Persist Security Info=False;User ID=sksadmin;Password=Sharad@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 
-
+	
+bcos we created a new connection string in appsettings
+  	do update-database again
 
 
 
