@@ -1,0 +1,10 @@
+Describe CTS in .NET
+
+What is .NET C# compilation process?
+
+Describe .NET architecture with components usage.
+
+Create a method to return double and cube using out keyword.
+
+Describe use of equals with example.
+

@@ -131,6 +131,49 @@ bcos we created a new connection string in appsettings
   	do update-database again
 
 
+App Service Plan 
+Once created do not delete this
+
+Web App
+
+APIM
+
+Azure API Management 
+
+We have to create one App Service
+Add API to it
+APIM
+
+gateway
+limitation on APIs calls
+e.g. I want to restrict continuous 
+	request count
+
+it provides applying web api key
+
+
+Azure Functions
+Why to use Function
+to put functionality as a method 
+on cloud to be cost as per consumption
+these functions run based on 
+any event like http trigger
+		blob trigger
+		timer trigger
+
+we will use Visual Studio to create the 
+	function and publish it
+
+Create a new project - azure function
+
+
+Will create azure function App 
+
+
+
+
+
+http://requestfunctions?a=11&b=22
 
 
 
@@ -139,6 +182,25 @@ bcos we created a new connection string in appsettings
 
 
 
+
+
+
+
+Add a Storage Account
+Add a container
+upload a file/image
+
+attach a azure function 
+the user/admin should get an email 
+
+email sending is separate feature that requires queues
+	and resend option on fail  
+
+For sending email we will use another service - 
+	Azure Logic App
+
+Logic apps are workflows - we add multiple functionalities 
+		as a flow (steps) 
 
 
 
