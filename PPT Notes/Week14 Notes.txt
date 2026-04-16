@@ -185,7 +185,6 @@ http://requestfunctions?a=11&b=22
 
 
 
-
 Add a Storage Account
 Add a container
 upload a file/image
@@ -206,6 +205,11 @@ Logic apps are workflows - we add multiple functionalities
 
 
 
+{
+  "To":"azuretestapr26@gmail.com",
+  "Subject":"New Upload",
+  "Body": "New BLOB added to the Storage"
+}
 
 
 

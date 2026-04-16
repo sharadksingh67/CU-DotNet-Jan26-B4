@@ -1,0 +1,8 @@
+Explain Static Constructors
+Explain base.Method() with example
+In what cases finally will never be called?
+Difference b/w IQueryable and IEnumerable
+How to enable Sorting on collection of User defined entity?
+Difference b/w is and as operator
+
+
