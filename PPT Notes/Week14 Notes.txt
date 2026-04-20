@@ -212,6 +212,39 @@ Logic apps are workflows - we add multiple functionalities
 }
 
 
+Polling - Weather Check, result, Balance 
+
+Push Notification - 
+ 
+Subscribe - Publish 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
