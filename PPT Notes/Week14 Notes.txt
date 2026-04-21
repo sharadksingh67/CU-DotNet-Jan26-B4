@@ -123,9 +123,6 @@ as a part of DB creation, server will
 
 sksadmin   Sharad@123
 
-
-Server=tcp:skssqlserver123.database.windows.net,1433;Initial Catalog=sksazuresqldb;Persist Security Info=False;User ID=sksadmin;Password=Sharad@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
-
 	
 bcos we created a new connection string in appsettings
   	do update-database again
