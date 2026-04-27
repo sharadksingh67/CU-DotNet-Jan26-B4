@@ -10,11 +10,13 @@ namespace LoanWebAPIApr2026.Services
     {
         private readonly ILoanRepository _repo;
         private readonly IMapper _mapper;
+        private readonly ILogger<LoanService> _logger;
 
-        public LoanService(ILoanRepository repo, IMapper mapper)
+        public LoanService(ILoanRepository repo, IMapper mapper, ILogger<LoanService> logger)
         {
             _repo = repo;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public async Task<LoanResponseDto> CreateLoanAsync(LoanRequestDto dto)
@@ -42,6 +44,8 @@ namespace LoanWebAPIApr2026.Services
             loan.TotalPayableAmount = loan.MonthlyPremium * dto.TenureMonths;
 
             loan.CreatedDate = DateTime.UtcNow;
+
+            _logger.LogInformation("Before DB call");
 
             var result = await _repo.AddAsync(loan);
 

@@ -1,5 +1,6 @@
 ﻿using LoanWebAPIApr2026.Common;
 using LoanWebAPIApr2026.Exceptions;
+using Serilog;
 
 namespace LoanWebAPIApr2026.Middleware
 {
@@ -52,7 +53,8 @@ namespace LoanWebAPIApr2026.Middleware
 
                 default:
                     context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                    response.Message = "Internal Server Error";
+                    response.Message = "Internal Server Error" + ex.ToString();
+                    Log.Error(ex, "Unhandled exception occurred");
                     break;
             }
 

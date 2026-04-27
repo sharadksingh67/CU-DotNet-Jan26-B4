@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver-container
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong@123
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+    
+
+  loanwebapiapr2026:
+    image: ${DOCKER_REGISTRY-}loanwebapiapr2026
+    build:
+      context: .
+      dockerfile: LoanWebAPIApr2026/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - sqlserver
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=FluentLoanDb;User Id=sa;Password=YourStrong@123;TrustServerCertificate=True;
+
+volumes:
+  sql_data:
