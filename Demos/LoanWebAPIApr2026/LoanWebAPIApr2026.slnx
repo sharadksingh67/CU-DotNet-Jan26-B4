@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="LoanWebAPIApr2026/LoanProjectTests.csproj" Id="6f2d3dfd-3955-4ec0-81f5-a14bcdb05b11" />
+  <Project Path="LoanProjectTests/LoanProjectTests.csproj" />
   <Project Path="LoanWebAPIApr2026/LoanWebAPIApr2026.csproj" />
 </Solution>
